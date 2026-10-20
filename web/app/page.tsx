@@ -4,21 +4,15 @@ import { latestOnline, latestOffline } from "@/mocks/latest";
 import { BucketList } from "@/components/BucketList";
 import { makeHistoryMock } from "@/mocks/history";
 import { Panel } from "@/components/Panel";
+import { WidgetDemo } from "@/components/WidgetDemo";
 
 const history = makeHistoryMock(new Date());
 
 export default function Home() {
   return (
     <main className="mx-auto max-w-3xl space-y-6 p-8">
-      <h1 className="mb-6 text-2xl font-semibold">Live Bench</h1>
-      
-      <LiveWidget state={{ kind: "loading"}} />
-      <LiveWidget state={toWidgetState(latestOnline)} />
-      <LiveWidget state={toWidgetState(latestOffline)} />
-      <LiveWidget state={{ kind: "error", message: "Could not reach the API." }} />
-      <Panel title="Last hour">
-        <BucketList buckets={history.buckets.slice(-12)} />  
-      </Panel> 
+      <h1 className="mb-6 text-2xl font-semibold">Live Bench</h1> 
+      <WidgetDemo />
     </main>
   );
 }
