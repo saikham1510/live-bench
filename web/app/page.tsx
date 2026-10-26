@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { projects } from "@/content/projects";
+import { CopyEmailButton } from "@/components/site/CopyEmailButton";
 import benchPhoto from "@/public/images/bench.jpg";
 
 export default function HomePage() {
@@ -57,6 +58,10 @@ export default function HomePage() {
       <section id="contact">
         <h2 className="text-2xl font-semibold">Contact</h2>
         <p className="mt-2 text-sm">[Contact form]</p>
+        <div className="mt-4">
+          <a href="mailto:saikham6276@gmail.com">saikham6276@gmail.com</a>
+          <CopyEmailButton email="saikham6276@gmail.com" />
+        </div>
       </section>
     </div>
   )
