@@ -9,3 +9,9 @@
 - Next.js provides a great developer experience with features like hot reloading, API routes, and built-in routing.
 - Tailwind CSS allows developers to style components directly in the markup, reducing context switching and improving productivity.
 - The combination of Next.js and Tailwind CSS leads to a more efficient development process, allowing developers to focus on building features rather than dealing with complex configurations.
+
+## Rendering Strategy (Oct 2026)
+- Pages (home, case studies, 404) are static server components. Content changes ship by redploying.
+- Interactive pieces are small client components ("use client" as low in the tree as possible): WidgetDemo, TimeAgo, LiveWidgetContainer, CopyEmailButton.
+- Live data is fetched in the browser, so pages stay static. Possible later: a server-side first reading with revalidate: 60 and a null fallback if the API is down at build time.
+- API base URL comes from NEXT_PUBLIC_API_BASE_URL (public by design; it's called from the browser). Set it in Vercel before the first deploy.
