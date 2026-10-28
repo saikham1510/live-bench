@@ -15,3 +15,10 @@
 - Interactive pieces are small client components ("use client" as low in the tree as possible): WidgetDemo, TimeAgo, LiveWidgetContainer, CopyEmailButton.
 - Live data is fetched in the browser, so pages stay static. Possible later: a server-side first reading with revalidate: 60 and a null fallback if the API is down at build time.
 - API base URL comes from NEXT_PUBLIC_API_BASE_URL (public by design; it's called from the browser). Set it in Vercel before the first deploy.
+
+## Hosting the website (Oct 2026)
+- Vercel Hobby, project `saikham` -> https://saikham.vercel.app. Root Directory: `web`.
+- Production deploys from `main`; every PR gets a preview deployment.
+- `NEXT_PUBLIC_API_BASE_URL` = `https://api.saikham.invalid/v1` until the backend exists, so the widget fails cleanly instead of calling the visitor's localhost
+- `/lab` ships to production: unlinked, noindex, labelled as mock data.
+- Repo renamed `live-bench-project` → `live-bench` before anything linked to it.
