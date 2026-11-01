@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  /* Surfaces */
+  --color-canvas: #F3F2F4;       /* page background */
+  --color-surface: #FCFCFD;      /* header, cards */
+  --color-surface-alt: #F7F6F8;  /* compact cards, image placeholders */
+  --color-chip: #E7E6EA;         /* tags, toggles, icon hover */
+
+  /* Text */
+  --color-ink: #1C232C;          /* headings, main text, footer background */
+  --color-ink-soft: #3F4853;     /* paragraphs */
+  --color-muted: #56606B;        /* captions, meta lines */
+
+  /* Lines */
+  --color-line: #D3D6DB;         /* card + header borders */
+  --color-line-soft: #E3E3E7;    /* dividers, chart grid */
+  --color-line-strong: #7D8BA0;  /* secondary button + input borders */
+
+  /* Accent */
+  --color-accent: #3E5068;       /* links, primary button */
+  --color-accent-hover: #2E3D52;
+
+  /* Text on the dark footer / Live Bench card */
+  --color-on-dark: #C9CDD3;
+  --color-on-dark-link: #A9BBD3;
+
+  /* Widget status colours */
+  --color-live: #2E7457;
+  --color-live-bg: #DCEDE4;
+  --color-live-on-dark: #6CC49C;
+  --color-danger: #A2372F;
+  --color-danger-bg: #F6E0DD;
+  --color-light-reading: #9A4F33;
+
+  /* Corners */
+  --radius-tag: 5px;
+  --radius-btn: 8px;
+  --radius-card: 10px;
+
+  /* Page width */
+  --container-page: 79rem;
+
+  /* Type sizes from the wireframes */
+  --text-display: 4rem;                 /* hero */
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.02em;
+  --text-section: 2.5rem;               /* section titles */
+  --text-section--line-height: 1.1;
+  --text-section--letter-spacing: -0.01em;
+  --text-title: 1.625rem;               /* card titles */
+  --text-title--line-height: 1.2;
+  --text-lead: 1.1875rem;               /* intro paragraph */
+  --text-lead--line-height: 1.55;
+  --text-reading: 2.375rem;             /* sensor values */
+  --text-reading--line-height: 1;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 5.5rem;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
