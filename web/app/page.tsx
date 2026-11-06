@@ -2,6 +2,7 @@ import { ProjectCard } from "@/components/site/ProjectCard";
 import { projects } from "@/content/projects";
 import { CopyEmailButton } from "@/components/site/CopyEmailButton";
 import { Hero } from "@/components/home/Hero";
+import { Section } from "@/components/home/Section";
 
 export default function HomePage() {
   const featured = projects.filter((p) => p.featured);
@@ -11,7 +12,12 @@ export default function HomePage() {
     <>
       <Hero />
 
-      <section id="work">
+      <Section 
+        id="work"
+        title="Work"
+        intro="Case studies tell the full story. Smaller projects link straight to the code."
+        tone="surface"
+      >
         <h2 className="text-2xl font-semibold">Work</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           {featured.map((p) => (
@@ -24,7 +30,7 @@ export default function HomePage() {
             <ProjectCard key={p.slug} project={p} />
           ))}
         </div>
-      </section>
+      </Section>
 
       <section id="about">
         <h2 className="text-2xl font-semibold">About</h2>
