@@ -2,6 +2,7 @@ import Link from "next/link";
 import { navLinks, site } from "@/content/site";
 import { Container } from "./Container";
 import { GitHubIcon, LinkedInIcon } from "./icons";
+import { MobileMenu } from "./MobileMenu";
 
 export function SiteHeader() {
     return (
@@ -46,6 +47,7 @@ export function SiteHeader() {
                         Resume (PDF)
                     </a>
                 </nav>
+                <MobileMenu />
             </Container>
 
         </header>
