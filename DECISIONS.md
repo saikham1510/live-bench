@@ -22,3 +22,15 @@
 - `NEXT_PUBLIC_API_BASE_URL` = `https://api.saikham.invalid/v1` until the backend exists, so the widget fails cleanly instead of calling the visitor's localhost
 - `/lab` ships to production: unlinked, noindex, labelled as mock data.
 - Repo renamed `live-bench-project` → `live-bench` before anything linked to it.
+
+## Styling foundations (Stage A · S1, Oct 2026)
+
+- Tailwind v4, CSS-first: all tokens live in `web/app/globals.css`.
+- Tokens are named by their job (canvas, surface, ink, muted, accent, line), not by colour, so dark mode only redefines values.
+- The scaffold's dark-mode block was removed until we have a dark-mode design.
+- Fonts: IBM Plex Sans (300–600) and IBM Plex Mono (400–500), self-hosted via next/font.
+- Header: sticky; desktop nav from `lg` (1024px). Below that, a menu button (aria-expanded) opens a panel that closes on link tap and Esc. No focus trap: it's a panel, not a modal.
+- `scroll-padding-top` keeps `/#section` targets clear of the sticky header.
+- Name and links live in `web/content/site.ts`.
+- Class names are always written in full (no `bg-${x}`)
+- Deferred: underline "Work" as the current page on case-study pages.

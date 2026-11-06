@@ -1,37 +1,49 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { site } from "@/content/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-plex-sans",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-plex-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Sai Kham - Computer Engineering",
-    template: "%s · Sai Kham",
+    default: site.name,
+    template: `%s · ${site.name}`,
   },
-  description: "ESP32 firmware, MQTT, FastAPI and Next.js, wired into one system you can watch run.",
+  description: site.description,
 };
 
-export default function RootLayout({ children }: { children: ReactNode}) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }> ) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${plexSans.variable} ${plexMono.variable}`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-dvh flex-col bg-canvas font-sans text-ink antialiased">
+        <a href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-btn focus:bg-surface focus:px-4 focus:py-4 focus:font-semibold focus:shadow-lg"
+        >
+          Skip to content
+        </a>
         <SiteHeader />
-        <main>{children}</main>
+        <main id="main" className="flex-1">
+          {children}
+        </main>
         <SiteFooter />
       </body>
     </html>
