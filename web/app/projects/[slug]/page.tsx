@@ -45,7 +45,7 @@ export default async function CaseStudyPage({ params }: Props) {
             </ul>
 
             {sections.map((s) => (
-                <section>
+                <section key={s.heading}>
                     <h2 className="text-xl font-semibold">{s.heading}</h2>
                     <p className="mt-2 text-sm">[Write-up goes here]</p>
                 </section>
