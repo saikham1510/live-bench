@@ -3,6 +3,7 @@ import { projects } from "@/content/projects";
 import { CopyEmailButton } from "@/components/site/CopyEmailButton";
 import { Hero } from "@/components/home/Hero";
 import { Section } from "@/components/home/Section";
+import { About } from "@/components/home/About";
 
 export default function HomePage() {
   const featured = projects.filter((p) => p.featured);
@@ -32,10 +33,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <section id="about">
-        <h2 className="text-2xl font-semibold">About</h2>
-        <p className="mt-2 text-sm">[About text]</p>
-      </section>
+      <About />
 
       <section id="skills">
         <h2 className="text-2xl font-semibold">Skills</h2>
