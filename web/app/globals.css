@@ -53,6 +53,11 @@
   --text-section: 2.5rem;               /* section titles */
   --text-section--line-height: 1.1;
   --text-section--letter-spacing: -0.01em;
+  --text-display-sm: 2.625rem;          /* 42px hero on phones */
+  --text-display-sm--line-height: 1.02;
+  --text-display-sm--letter-spacing: -0.02em;
+  --text-section-sm: 2rem;              /* 32px section titles on phones */
+  --text-section-sm--line-height: 1.1;
   --text-title: 1.625rem;               /* card titles */
   --text-title--line-height: 1.2;
   --text-lead: 1.1875rem;               /* intro paragraph */
