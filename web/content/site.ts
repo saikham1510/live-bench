@@ -1,5 +1,6 @@
 export const site = {
     name: "Sai Kham",
+    email: "saikham6276@gmail.com",
     description:
         "Computer Engineering student at Temasek Polytechnic. I build the whole path from sensor to screen.",
     githubUrl: "https://github.com/saikham1510",
