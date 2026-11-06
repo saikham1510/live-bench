@@ -1,19 +1,26 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { buttonClass } from "./button";
 
-type CopyStatus = "idle" | "copied" | "failed";
+type Status = "idle" | "copied" | "failed";
+
+const messages: Record<Status, string> = {
+    idle: "",
+    copied: "Email copied",
+    failed: "Couldn't copy. Select the address instead.",
+};
 
 export function CopyEmailButton({ email }: { email: string}) {
-    const [status, setStatus] = useState<CopyStatus>("idle");
+    const [status, setStatus] = useState<Status>("idle");
 
     useEffect(() => {
         if (status === "idle") return;
-        const id = setTimeout(() => setStatus("idle"), 2000);
-        return () => clearTimeout(id);
+        const timer = setTimeout(() => setStatus("idle"), 2000);
+        return () => clearTimeout(timer);
     }, [status]);
 
-    async function handleClick() {
+    async function copy() {
         try {
             await navigator.clipboard.writeText(email);
             setStatus("copied");
@@ -22,12 +29,14 @@ export function CopyEmailButton({ email }: { email: string}) {
         }
     }
 
-    const label = 
-        status === "copied" ? "Copied!" : status === "failed" ? "Copy failed" : "Copy email";
-
     return (
-        <button type="button" onClick={handleClick} className="rounded border px-3 py-1 text-sm">
-            {label}
-        </button>
+        <div className="flex flex-wrap items-center gap-3">
+            <button type="button" onClick={copy} className={buttonClass("secondary")}>
+                {status === "copied" ? "Copied": "Copy email"}
+            </button>
+            <span role="status" className="text-sm text-muted">
+                {messages[status]}
+            </span>
+        </div>
     );
 }
