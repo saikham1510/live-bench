@@ -4,6 +4,7 @@ import { CopyEmailButton } from "@/components/site/CopyEmailButton";
 import { Hero } from "@/components/home/Hero";
 import { Section } from "@/components/home/Section";
 import { About } from "@/components/home/About";
+import { Skills } from "@/components/home/Skills";
 
 export default function HomePage() {
   const featured = projects.filter((p) => p.featured);
@@ -35,10 +36,7 @@ export default function HomePage() {
 
       <About />
 
-      <section id="skills">
-        <h2 className="text-2xl font-semibold">Skills</h2>
-        <p className="mt-2 text-sm">[Skill groups]</p>
-      </section>
+      <Skills />
 
       <section id="contact">
         <h2 className="text-2xl font-semibold">Contact</h2>
