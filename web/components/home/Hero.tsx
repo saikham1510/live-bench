@@ -5,6 +5,7 @@ import { buttonClass } from "@/components/site/button";
 import { Container } from "@/components/site/Container";
 import { hero } from "@/content/home";
 import { site } from "@/content/site";
+import { SignalPath } from "./SignalPath";
 
 export function Hero() {
     return (
@@ -44,6 +45,7 @@ export function Hero() {
                         </figcaption>
                     </figure>
                 </div>
+                <SignalPath />
             </Container>
         </section>
     );
