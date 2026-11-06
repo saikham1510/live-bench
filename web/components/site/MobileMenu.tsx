@@ -37,7 +37,7 @@ export function MobileMenu() {
                 aria-expanded={open}
                 aria-controls="mobile-menu"
                 onClick={() => setOpen((isOpen) => !isOpen)}
-                className="-mr-2 flex size-12 items-center justify-center rounded-btn hover:bg-chip"
+                className="-mr-2 flex size-12 items-center justify-center rounded-btn hover:bg-chip lg:hidden"
             >
                 {open ? <CloseIcon/> : <MenuIcon/>}
             </button>
