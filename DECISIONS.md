@@ -34,3 +34,15 @@
 - Name and links live in `web/content/site.ts`.
 - Class names are always written in full (no `bg-${x}`)
 - Deferred: underline "Work" as the current page on case-study pages.
+
+## Home sections (Stage A · S2, Nov 2026)
+
+- Interim hero: the bench photo with a caption saying live readings replace it in December. No fake numbers.
+  In December the live widget swaps in for the `<figure>`; nothing else in the hero changes.
+- On phones the hero buttons come before the photo (the wireframe's panel-first order was for live data).
+- Signal path: one data list, shown as a `<details>` fold-out (closed) below `lg` and as four cards from `lg`.
+- All home page copy lives in `web/content/home.ts`; components only do layout.
+- Skills list only real skills I can do; tools get added once a project uses them.
+- Contact ships without a form until the submit target is decided; email, copy button, LinkedIn, GitHub and resume cover it.
+- About ships without a portrait until there's a real photo.
+- Sections share `components/home/Section.tsx` (id, title, intro, tone) so spacing and headings match.

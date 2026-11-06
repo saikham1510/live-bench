@@ -1,36 +1,26 @@
-import Image from "next/image";
-import Link from "next/link";
 import { ProjectCard } from "@/components/site/ProjectCard";
 import { projects } from "@/content/projects";
 import { CopyEmailButton } from "@/components/site/CopyEmailButton";
-import benchPhoto from "@/public/images/bench.jpg";
+import { Hero } from "@/components/home/Hero";
+import { Section } from "@/components/home/Section";
+import { About } from "@/components/home/About";
+import { Skills } from "@/components/home/Skills";
+import { Contact } from "@/components/home/Contact";
 
 export default function HomePage() {
   const featured = projects.filter((p) => p.featured);
   const more = projects.filter((p) => !p.featured);
 
   return (
-    <div className="mx-auto max-w-5xl space-y-16 p-4">
-      <section id="top" className="grid gap-8 md:grid-cols-2 md:items-center">
-        <div>
-          <p className="text-sm">Computer Engineering, Temasek Polytechnic</p>
-          <h1 className="mt-2 text-4xl font-semibold">
-            I build the whole path from sensor to screen.
-          </h1>
-          <Link href="/#work" className="mt-6 inline-block underline">
-            See my work
-          </Link>
-        </div>
-        <Image 
-          src={benchPhoto}
-          alt="ESP32 sensor board"
-          placeholder="blur"
-          loading="eager"
-          className="h-auto w-full rounded"
-        />
-      </section>
+    <>
+      <Hero />
 
-      <section id="work">
+      <Section 
+        id="work"
+        title="Work"
+        intro="Case studies tell the full story. Smaller projects link straight to the code."
+        tone="surface"
+      >
         <h2 className="text-2xl font-semibold">Work</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           {featured.map((p) => (
@@ -43,26 +33,13 @@ export default function HomePage() {
             <ProjectCard key={p.slug} project={p} />
           ))}
         </div>
-      </section>
+      </Section>
 
-      <section id="about">
-        <h2 className="text-2xl font-semibold">About</h2>
-        <p className="mt-2 text-sm">[About text]</p>
-      </section>
+      <About />
 
-      <section id="skills">
-        <h2 className="text-2xl font-semibold">Skills</h2>
-        <p className="mt-2 text-sm">[Skill groups]</p>
-      </section>
+      <Skills />
 
-      <section id="contact">
-        <h2 className="text-2xl font-semibold">Contact</h2>
-        <p className="mt-2 text-sm">[Contact form]</p>
-        <div className="mt-4">
-          <a href="mailto:saikham6276@gmail.com">saikham6276@gmail.com</a>
-          <CopyEmailButton email="saikham6276@gmail.com" />
-        </div>
-      </section>
-    </div>
+      <Contact />
+    </>
   )
 }

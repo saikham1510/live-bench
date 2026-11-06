@@ -42,3 +42,11 @@ export function CloseIcon({ className = "size-[22px]" }: IconProps) {
     </svg>
   );
 }
+
+export function ChevronDownIcon({ className = "size-[18px]" }: IconProps) {
+  return (
+    <svg {...base} strokeWidth={2} className={className}>
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  )
+}
