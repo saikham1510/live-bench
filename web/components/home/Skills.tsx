@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 import { skillGroups, skillsIntro } from "@/content/home";
 import { Section } from "./Section";
+import { TagList } from "@/components/site/TagList";
 
 export function Skills() {
     return (
@@ -11,13 +12,7 @@ export function Skills() {
                     <div key={group.title} className="flex flex-col gap-3.5 border-t-2 border-ink pt-4">
                         <h3 className="text-base font-semibold lg:text-[17px]">{group.title}</h3>
 
-                        <ul className="flex flex-wrap gap-1.5">
-                            {group.skills.map((skill) => (
-                                <li key={skill} className="rounded-tag bg-chip px-[9px] py-1.5 text-xs leading-none text-ink-soft">
-                                    {skill}
-                                </li>
-                            ))}
-                        </ul>
+                        <TagList tags={group.skills} />
 
                         {group.shownIn.length > 0 && (
                             <p className="text-sm">
