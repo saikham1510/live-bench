@@ -16,7 +16,6 @@ export type Project = {
     cover?: ProjectCover;
     writeupNote?: string;
     links?: ProjectLink[];
-    codeUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -86,7 +85,6 @@ export const projects: Project[] = [
         status: "shipped",
         meta: "Y2 Full Stack Development Project",
         links: [{ label: "Code", href: "https://github.com/saikham1510/YummyVerse" }],
-        codeUrl: "https://github.com/saikham1510/YummyVerse",
     },
 ];
 
