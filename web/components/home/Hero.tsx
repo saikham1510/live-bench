@@ -37,7 +37,7 @@ export function Hero() {
                             sizes="(min-width: 1280px) 600px, (min-width: 1024px) 50vw, 100vw"
                             className="aspect-4/3 h-auto w-full object-cover"
                         />
-                        <figcaption className="flex flex-wrep items-center justify-between gap-x-4 gap-y-1 border-t border-line-soft px-4 py-3 text-sm lg:px-5">
+                        <figcaption className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-t border-line-soft px-4 py-3 text-sm lg:px-5">
                             <span className="text-muted">{hero.photoCaption}</span>
                             <Link href="/projects/live-bench" className="font-medium text-accent hover:text-accent-hover">
                                 How it works

@@ -63,14 +63,14 @@ export function MobileMenu() {
                         <div className="flex gap-2 py-4">
                             <a 
                                 href={site.githubUrl}
-                                className="inline-flex min-h-11 items-cetner gap-2 rounded-btn px-3 font-medium hover:bg-chip"
+                                className="inline-flex min-h-11 items-center gap-2 rounded-btn px-3 font-medium hover:bg-chip"
                             >
                                 <GitHubIcon />
                                 GitHub
                             </a>
                             <a 
                                 href={site.linkedinUrl}
-                                className="inline-flex min-h-11 items-cetner gap-2 rounded-btn px-3 font-medium hover:bg-chip"
+                                className="inline-flex min-h-11 items-center gap-2 rounded-btn px-3 font-medium hover:bg-chip"
                             >
                                 <LinkedInIcon />
                                 LinkedIn
