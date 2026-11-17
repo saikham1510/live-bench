@@ -46,3 +46,14 @@
 - Contact ships without a form until the submit target is decided; email, copy button, LinkedIn, GitHub and resume cover it.
 - About ships without a portrait until there's a real photo.
 - Sections share `components/home/Section.tsx` (id, title, intro, tone) so spacing and headings match.
+
+## Project cards (Stage A · S3, Nov 2026)
+
+- The data decides the card: featured + shipped -> case-study card (whole card clickable via a stretched title link); featured + writeup-pending -> pending card with a write-up note; not featured -> compact card with optional links.
+- Covers stay honest: Live Bench shows its real status and signal chain until the live feed exists (no fake readings); other featured cards show three factual lines until there's image.
+- Project data stays in `web/content/projects.ts`; it moves to markdown only when long case studies are written.
+- The home page shows at most 6 projects (3 featured + 3 compact). A /projects index comes only beyond that.
+- Company work is described only briefly.
+- Slugs are descriptive because they become URLs; rename only before a page exists.
+- Data shape changes follow expand -> migrate -> contract, so every commit builds.
+- External links open in the same tab.
