@@ -35,7 +35,7 @@ export const about = {
     `I’m ${site.name}, a Computer Engineering student at Temasek Polytechnic. I like projects where the hardware and the software have to agree with each other, which is why most of my work touches both.`,
   ],
   facts: [
-    { label: "Right now", value: "Working on Major Project at Temasek Polytechnic, until February" },
+    { label: "Right now", value: "TP Final-year Major Project: Evacuee Monitoring on a Jetson Edge device" },
     { label: "Looking for", value: "Junior Embedded / Full-stack Software Engineering roles from 2027 April" },
     { label: "Studying", value: "Diploma in Computer Engineering (T13), graduating 2027" },
   ],
@@ -61,7 +61,7 @@ export const skillGroups: SkillGroup[] = [
   {
     title: "Backend and data",
     skills: ["Python", "FastAPI", "MQTT", "PostgreSQL", "TimescaleDB"],
-    shownIn: [{ label: "Live Bench", href: "/projects/live-bench" }, { label: "[Major Project]" }],
+    shownIn: [{ label: "Live Bench", href: "/projects/live-bench" }, { label: "Evacuee Monitoring System" }],
   },
   {
     title: "Frontend",
