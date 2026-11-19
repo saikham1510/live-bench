@@ -5,7 +5,7 @@ export const hero = {
   title: "I build the whole path from sensor to screen.",
   intro:
     "Live Bench is an ESP32 with temperature, light and presence sensors. Its readings travel over MQTT to a FastAPI backend and onto this page. I’m writing every layer, and the live feed goes up here in December.",
-  photoAlt: "[Describe the photo in one sentence, e.g. An ESP32 board wired to three sensors on a breadboard]",
+  photoAlt: "An ESP32 board, generated image (to be replaced with actual board once ready)",
   photoCaption: "The Live Bench prototype. Live readings replace this photo in December.",
 };
 
