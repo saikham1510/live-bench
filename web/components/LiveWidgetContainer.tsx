@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ApiError, getLastest } from "@/lib/api";
+import { ApiError, getLatest } from "@/lib/api";
 import { toWidgetState } from "@/lib/widget-state";
 import type { WidgetState } from "@/types/widget";
 import { LiveWidget } from "./LiveWidget";
@@ -14,7 +14,7 @@ export function LiveWidgetContainer({ deviceId }: { deviceId: string}) {
 
         async function load() {
             try {
-                const latest = await getLastest(deviceId);
+                const latest = await getLatest(deviceId);
                 if (!cancelled) {
                     setState(toWidgetState(latest));
                 }
