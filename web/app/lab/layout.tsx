@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export default function LabLayout({ children }: { children: ReactNode }) {
     return (
         <div>
-            <p className="bg-yellow-100 p-2 text-center text-sm">
+            <p className="bg-delayed-bg p-2 text-center text-sm text-delayed">
                 Dev lab: mock data, not linked from the public site.
             </p>
             {children}
