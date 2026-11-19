@@ -99,3 +99,10 @@ export function hasCaseStudy(project: Project): boolean {
 export function getCaseStudySlugs(): string[] {
     return projects.filter(hasCaseStudy).map((p) => p.slug);
 }
+
+export function getNextFeatured(slug: string): Project | undefined {
+    const featured = projects.filter((p) => p.featured);
+    const index = featured.findIndex((p) => p.slug === slug);
+    const next = featured[(index + 1) % featured.length];
+    return next && next.slug !== slug ? next : undefined;
+}

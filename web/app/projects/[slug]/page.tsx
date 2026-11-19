@@ -4,6 +4,7 @@ import { CaseStudyBlock } from "@/components/case-study/CaseStudyBlock";
 import { CaseStudyHeader } from "@/components/case-study/CaseStudyHeader";
 import { CaseStudyToc } from "@/components/case-study/CaseStudyToc";
 import { MobileToc } from "@/components/case-study/MobileToc";
+import { MoreCaseStudies } from "@/components/case-study/MoreCaseStudies";
 import { Container } from "@/components/site/Container";
 import { getCaseStudy } from "@/content/case-studies";
 import { getCaseStudySlugs, getProject, hasCaseStudy } from "@/content/projects";
@@ -65,6 +66,9 @@ export default async function CaseStudyPage({ params }: Props) {
                             ))}
                         </section>
                     ))}
+
+                    <MoreCaseStudies currentSlug={project.slug} />
+                    
                 </article>
             </Container>
         </>
