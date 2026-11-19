@@ -28,7 +28,7 @@ export default function LabPage() {
           <h2 className="text-lg font-semibold">Real requests</h2>
           <LiveWidgetContainer deviceId="bench-01" />
           <p className="text-sm leading-normal text-ink-soft">
-            Calls the real API. Until the backend exists this shows "Can't connect".
+            Calls the real API. Until the backend exists this shows “Can’t connect”.
           </p>
         </section>
 
