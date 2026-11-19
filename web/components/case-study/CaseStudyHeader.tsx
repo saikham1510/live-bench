@@ -4,7 +4,6 @@ import { ChevronLeftIcon } from "@/components/site/icons";
 import { TagList } from "@/components/site/TagList";
 import type { CaseStudy } from "@/content/case-studies";
 import type { Project } from "@/content/projects";
-import { link } from "fs";
 
 type Props = { project: Project; caseStudy: CaseStudy };
 
