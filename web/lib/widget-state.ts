@@ -1,12 +1,6 @@
 import type { LatestResponse } from "@/types/telemetry";
-import type { LiveWidgetState, WidgetState } from "@/types/widget";
+import type { LiveWidgetState } from "@/types/widget";
 import { secondsSince } from "./format";
-
-export function toWidgetState({ device, reading }: LatestResponse): WidgetState {
-    return device.status === "online"
-    ? { kind: "live", device, reading }
-    : { kind: "offline", device, reading};
-}
 
 export function getWidgetState(
     latest: LatestResponse | null,
