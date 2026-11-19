@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { CaseStudyBlock } from "@/components/case-study/CaseStudyBlock";
 import { CaseStudyHeader } from "@/components/case-study/CaseStudyHeader";
+import { CaseStudyToc } from "@/components/case-study/CaseStudyToc";
+import { MobileToc } from "@/components/case-study/MobileToc";
 import { Container } from "@/components/site/Container";
 import { getCaseStudy } from "@/content/case-studies";
 import { getCaseStudySlugs, getProject, hasCaseStudy } from "@/content/projects";
@@ -27,6 +29,11 @@ export default async function CaseStudyPage({ params }: Props) {
         throw new Error(`"${slug}" is featured and shipped, but content/case-studies.ts has no entry for it.`);
     }
 
+    const toc = caseStudy.sections.map((section, index) => ({
+        id: section.id,
+        label: `${index + 1}. ${section.title}`,
+    }))
+
     return (
         <>
             <CaseStudyHeader project={project} caseStudy={caseStudy} />
@@ -37,7 +44,11 @@ export default async function CaseStudyPage({ params }: Props) {
                 </Container>
             )}
 
-            <Container className="pt-6 pb-14 lg:pt-18 lg:pb-22">
+            <Container className="grid grid-cols-1 gap-11 pt-6 pb-14 lg:pt-18 lg:grid-cols-[240px_minmax(0,1fr)] lg:items-start lg:gap-20 lg:pb-22">
+
+                <CaseStudyToc items={toc} />
+                <MobileToc items={toc} />
+
                 <article className="flex max-w-[800px] flex-col gap-11 lg:gap-16">
                     {caseStudy.sections.map((section, index) => (
                         <section
