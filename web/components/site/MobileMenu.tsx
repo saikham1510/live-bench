@@ -1,14 +1,16 @@
 "use client"
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { navLinks, site } from "@/content/site";
+import { isCurrentNavLink, navLinks, site } from "@/content/site";
 import { Container } from "./Container";
 import { CloseIcon, GitHubIcon, LinkedInIcon, MenuIcon } from "./icons";
 
 export function MobileMenu() {
     const [open, setOpen] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
+    const pathname = usePathname();
 
     useEffect(() => {
         if(!open) return;
@@ -54,7 +56,8 @@ export function MobileMenu() {
                                 key={link.href}
                                 href={link.href}
                                 onClick={close}
-                                className="border-b border-line-soft py-3.5 text-lg font-medium"
+                                aria-current={isCurrentNavLink(link, pathname) ? "page" : undefined}
+                                className="border-b border-line-soft py-3.5 text-lg font-medium aria-[current=page]:underline aria-[current=page]:decoration-2 aria-[current=page]:underline-offset-[6px]"
                             >
                                 {link.label}
                             </Link>
