@@ -64,7 +64,7 @@ function CompactCard({ project }: CardProps) {
             <p className="text-[15px] leading-normal text-ink-soft">{project.summary}</p>
             <TagList tags={project.tags} />
             {project.links && project.links.length > 0 && (
-                <div className="mt-auto flex flex-wrap gap-x-5 text-[15px]f font-medium">
+                <div className="mt-auto flex flex-wrap gap-x-5 text-[15px] font-medium">
                     {project.links.map((link) => (
                         <a 
                             key={link.href}

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { navLinks, site } from "@/content/site";
+import { site } from "@/content/site";
 import { Container } from "./Container";
+import { DesktopNavLinks } from "./DesktopNavLinks";
 import { GitHubIcon, LinkedInIcon } from "./icons";
 import { MobileMenu } from "./MobileMenu";
 
@@ -13,15 +14,8 @@ export function SiteHeader() {
                 </Link>
 
                 <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.href}
-                            href={link.href}
-                            className="px-1 py-2.5 text-[15px] font-medium hover:text-accent"
-                        >
-                            {link.label}
-                        </Link>
-                    ))}
+                    
+                    <DesktopNavLinks />
 
                     <div className="flex gap-0.5">
                         <a 

@@ -57,3 +57,10 @@
 - Slugs are descriptive because they become URLs; rename only before a page exists.
 - Data shape changes follow expand -> migrate -> contract, so every commit builds.
 - External links open in the same tab.
+
+## Case study page (Stage A · S4, Nov 2026)
+- Case-study content lives in `web/content/case-studies.ts`, separate from card data in `projects.ts`. Sections are lists of typed blocks (text, rows, flow, decisions, code, stats, placeholder); the page picks a layout per block kind.
+- One section list drives both the numbered headings and "On this page".
+- "On this page": sticky list from `lg` with the current section highlighted (small client component); a closed `<details>` on phones.
+- Header "Work" gets `aria-current="page"` on `/projects/*`, read from the pathname in small client components; the underline is styled from that attribute.
+- The hero photo is labelled as a stand-in until I have my own board; the footer doesn't claim a running ESP32 yet.

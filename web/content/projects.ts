@@ -39,13 +39,13 @@ export const projects: Project[] = [
         meta: "Final-year Major Project, team of 3 students",
         cover: {
             kind: "facts",
-            lines: ["2 cameras, 1 headcount", "Re-identification across views", "Edge device: Jetson Orin NX"],
+            lines: ["Camera Vision", "Edge device: Jetson Orin NX"],
         },
         writeupNote: "Case study after assessment",
     },
     {
         slug: "robot-fleet-integration",
-        title: "CBM internship, Open-RMF project",
+        title: "CBM internship",
         summary: "Connected an existing Central Management Task System to Open-RMF: tasks travel over MQTT to robots in a Gazebo simulation, which carry them out and report progress back.",
         tags: ["Python", "C++", "ROS 2", "Open-RMF", "MQTT"],
         featured: true,
@@ -53,18 +53,18 @@ export const projects: Project[] = [
         meta: "Y3 Internship Project",
         cover: {
             kind: "facts",
-            lines: ["ROS 2 Humble on Ubuntu 22.04", "Open-RMF fleet management", "Gazebo multi-robot simulation"],
+            lines: ["ROS 2 Humble", "Open-RMF", "Gazebo simulation"],
         },
         writeupNote: "Case study in progress"
     },
     {
         slug: "meeting-note-taker",
         title: "Meeting note-taker",
-        summary: "A Windows app that transcribes meetings locally with MERaLiON, chosen for local accents, then summarises them with Qwen. Built with one teammate on top of the open-source TalkTrack application.",
+        summary: "A Windows app that transcribes meetings locally with an ASR model, then summarises them using local AI. Built with one teammate during a short contract at CBM, on top of the open-source TalkTrack application.",
         tags: ["Python"],
         featured: false,
         status: "shipped",
-        meta: "CBM contract extension, 2027"
+        meta: "CBM short-term contract"
     },
     {    
         slug: "smart-bakery",
@@ -83,7 +83,7 @@ export const projects: Project[] = [
         tags: ["C#", "ASP.Net", "SQL Server"],
         featured: false,
         status: "shipped",
-        meta: "Y2 Full Stack Development Project",
+        meta: "Y2 Full Stack Project",
         links: [{ label: "Code", href: "https://github.com/saikham1510/YummyVerse" }],
     },
 ];
@@ -98,4 +98,11 @@ export function hasCaseStudy(project: Project): boolean {
 
 export function getCaseStudySlugs(): string[] {
     return projects.filter(hasCaseStudy).map((p) => p.slug);
+}
+
+export function getNextFeatured(slug: string): Project | undefined {
+    const featured = projects.filter((p) => p.featured);
+    const index = featured.findIndex((p) => p.slug === slug);
+    const next = featured[(index + 1) % featured.length];
+    return next && next.slug !== slug ? next : undefined;
 }

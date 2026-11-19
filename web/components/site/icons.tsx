@@ -59,3 +59,11 @@ export function ClockIcon({ className = "size-4" }: IconProps) {
     </svg>
   );
 }
+
+export function ChevronLeftIcon({ className = "size-4" }: IconProps) {
+  return (
+    <svg {...base} strokeWidth={2} className={className}>
+      <path d="M15 6l-6 6 6 6" />
+    </svg>
+  );
+}

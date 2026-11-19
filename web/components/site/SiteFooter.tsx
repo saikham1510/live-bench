@@ -12,7 +12,7 @@ export function SiteFooter() {
                         {site.name}, {year}
                     </p>
                     <p>
-                        Built with Next.js and a real ESP32.{" "}
+                        Built with Next.js, with an ESP32 feed on the way.{" "}
                         <a href={site.repoUrl} className="text-on-dark-link underline-offset-4 hover:underline">
                             Source on GitHub
                         </a>

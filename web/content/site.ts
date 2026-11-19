@@ -9,9 +9,15 @@ export const site = {
     resumePath: "/resume.pdf",
 } as const;
 
-export const navLinks = [
-    { label: "Work", href: "/#work" },
+export type NavLink = { label: string; href: string; currentFrom?: string };
+
+export const navLinks: NavLink[] = [
+    { label: "Work", href: "/#work", currentFrom: "/projects/" },
     { label: "About", href: "/#about" },
     { label: "Skills", href: "/#skills" },
     { label: "Contact", href: "/#contact" },
-] as const;
+];
+
+export function isCurrentNavLink(link: NavLink, pathname: string): boolean {
+    return link.currentFrom !== undefined && pathname.startsWith(link.currentFrom);
+}
