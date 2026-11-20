@@ -64,3 +64,12 @@
 - "On this page": sticky list from `lg` with the current section highlighted (small client component); a closed `<details>` on phones.
 - Header "Work" gets `aria-current="page"` on `/projects/*`, read from the pathname in small client components; the underline is styled from that attribute.
 - The hero photo is labelled as a stand-in until I have my own board; the footer doesn't claim a running ESP32 yet.
+
+## Live widget states (Stage A · S5, Nov 2026)
+- Six states from the v2 wireframe: Loading, Live, Delayed, Offline, No readings yet, Can't connect; plus "one sensor failed" inside a state.
+- One pure function, `getWidgetState(latest, failed, now)`, decides the stae; the widget only draws it. The clock is passed in, so /lab freezes time and shows every state.
+- Delayed is frontend-only: online, but no reading for 2 x publish_interval_s before the backend's 180 s offline rule.
+- Can't connect keeps the last good reading (dimmed) and retries every 60s; "Try again now" re-runs the request.
+- Times always show in SGT (fixed time zone), so nothing jumps when the state changes. The chart slot is a labelled placeholder until /history exists.
+- Not yet: SSE stream, 24 h chart, value-change highlight. The widget stays off the public pages until the device sends real data.
+- The old Primer widget components were removed; lint is at 0 warnings.
