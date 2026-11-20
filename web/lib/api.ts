@@ -44,7 +44,7 @@ export async function parseResponse<T>(res:Response): Promise<T> {
     throw new ApiError(res.status, "unknown", `Request failed with status ${res.status}`);
 };
 
-export async function getLastest(deviceId: string): Promise<LatestResponse> {
+export async function getLatest(deviceId: string): Promise<LatestResponse> {
     const res = await fetch(`${API_BASE}/devices/${encodeURIComponent(deviceId)}/latest`);
     return parseResponse<LatestResponse>(res);
 }

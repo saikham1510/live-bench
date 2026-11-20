@@ -18,6 +18,7 @@ const colors = [
   { name: "muted", swatch: "bg-muted", use: "Captions" },
   { name: "accent", swatch: "bg-accent", use: "Links, primary button" },
   { name: "live", swatch: "bg-live", use: "Widget: online" },
+  { name: "delayed", swatch: "bg-delayed", use: "Widget: delayed" },
   { name: "danger", swatch: "bg-danger", use: "Widget: error" },
   { name: "light-reading", swatch: "bg-light-reading", use: "Light value" },
 ];
