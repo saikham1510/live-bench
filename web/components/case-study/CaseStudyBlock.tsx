@@ -119,7 +119,7 @@ export function CaseStudyBlock({ block }: { block: Block } ) {
 
         case "code":
             return (
-                <pre className="overflow-x-auto rounded-card bg-ink p-4 font-mono text-[13px] leading-relaxed text-surface lg:px-[22px] lg:py-5 lg:text-sm">
+                <pre tabIndex={0} className="overflow-x-auto rounded-card bg-ink p-4 font-mono text-[13px] leading-relaxed text-surface lg:px-[22px] lg:py-5 lg:text-sm">
                     <code>{block.code}</code>
                 </pre>
             )
