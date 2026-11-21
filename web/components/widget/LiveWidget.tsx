@@ -115,7 +115,7 @@ export function LiveWidget({ deviceId, state, now, onRetry }: Props) {
                 <StatusBadge kind={state.kind} />
             </div>
 
-            <Body state={state} onRetry={onRetry} />
+            <Body key={state.kind} state={state} onRetry={onRetry} />
 
             <p className="border-t border-line-soft pt-3 text-[13px] text-muted tabular-nums">{footerText(state, now)}</p>
         </section>
