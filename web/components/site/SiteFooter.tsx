@@ -19,7 +19,7 @@ export function SiteFooter() {
                     </p>
                 </div>
 
-                <a href="#top" className="self-start text-on-dark-link underline-offset-4 hover:underline">
+                <a href="#top" className="inline-flex min-h-11 items-center self-start text-on-dark-link underline-offset-4 hover:underline">
                     Back to top
                 </a>
             </Container>
