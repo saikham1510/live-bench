@@ -73,3 +73,13 @@
 - Times always show in SGT (fixed time zone), so nothing jumps when the state changes. The chart slot is a labelled placeholder until /history exists.
 - Not yet: SSE stream, 24 h chart, value-change highlight. The widget stays off the public pages until the device sends real data.
 - The old Primer widget components were removed; lint is at 0 warnings.
+
+## Accessibility and phone pass (Stage A · S6, Nov 2026)
+- Checked with axe and Lighthouse (mobile) on a production build, before and after: axe now reports 0 issues on every page; Ligthouse accessibility score is 100.
+- Links inside sentences are always underlined, not just colours.
+- Tap targets are at least 44px high.
+- Scrollable code blocks are keyboard-focusable.
+- "Dimmed" widget values use grey text, nver opacity, so they pass colour contrast (4.5:1).
+- The widget body is keyed by state, so changing state never moves old elements (CLS 0 on /lab).
+- Widgets are named articles, not landmarks, so pages with several widgets don't repeat the same landmark.
+- /lab stays noindexx; its SEO score and the console error from the not-yet-existing API are expected.
