@@ -21,7 +21,7 @@ export function Skills() {
                                     <Fragment key={item.label}>
                                         {index > 0 && ", "}
                                         {item.href ? (
-                                            <Link href={item.href}  className="text-accent hover:text-accent-hover">
+                                            <Link href={item.href} className="text-accent underline underline-offset-4 hover:text-accent-hover">
                                                 {item.label}
                                             </Link>
                                         ) : (

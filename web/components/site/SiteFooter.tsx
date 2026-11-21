@@ -13,13 +13,13 @@ export function SiteFooter() {
                     </p>
                     <p>
                         Built with Next.js, with an ESP32 feed on the way.{" "}
-                        <a href={site.repoUrl} className="text-on-dark-link underline-offset-4 hover:underline">
+                        <a href={site.repoUrl} className="text-on-dark-link underline underline-offset-4 hover:text-surface">
                             Source on GitHub
                         </a>
                     </p>
                 </div>
 
-                <a href="#top" className="self-start text-on-dark-link underline-offset-4 hover:underline">
+                <a href="#top" className="inline-flex min-h-11 items-center self-start text-on-dark-link underline-offset-4 hover:underline">
                     Back to top
                 </a>
             </Container>

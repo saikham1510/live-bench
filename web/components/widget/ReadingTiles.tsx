@@ -20,16 +20,17 @@ type Props = { reading: Reading; dimmed?: boolean };
 
 export function ReadingTiles({ reading, dimmed = false }: Props) {
     const { temperature, light_level, presence, timestamp } = reading;
+    const ink = dimmed ? "text-muted" : "";
 
     return (
-        <dl className={`${grid} ${dimmed ? "opacity-55" : ""}`}>
+        <dl className={grid}>
             <div className={tile}>
                 <dt className={label}>Temperature</dt>
                 <dd className="flex flex-col gap-1">
                     {temperature === null ? (
                         <Failed at={timestamp} />
                     ) : (
-                        <span className={number}>
+                        <span className={`${number} ${ink}`}>
                             {temperature.toFixed(1)}
                             <span className={unit}> °C</span>
                         </span>
@@ -43,7 +44,7 @@ export function ReadingTiles({ reading, dimmed = false }: Props) {
                     {light_level === null ? (
                         <Failed at={timestamp} />
                     ) : (
-                        <span className={`${number} ${dimmed ? "" : "text-light-reading"}`}>
+                        <span className={`${number} ${dimmed ? "text-muted" : "text-light-reading"}`}>
                             {light_level}
                             <span className={unit}> %</span>
                         </span>
@@ -57,7 +58,7 @@ export function ReadingTiles({ reading, dimmed = false }: Props) {
                     {presence === null ? (
                         <Failed at={timestamp} />
                     ) : (
-                        <span className="text-base leading-tight font-medium">
+                        <span className={`text-base leading-tight font-medium ${ink}`}>
                             {presence ? "Someone’s in" : "Empty"}
                         </span>
                     )}

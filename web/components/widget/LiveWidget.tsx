@@ -106,7 +106,7 @@ function footerText(state: LiveWidgetState, now: Date): string {
 
 export function LiveWidget({ deviceId, state, now, onRetry }: Props) {
     return (
-        <section
+        <article
             aria-label={`Room sensor, ${deviceId}`}
             className="flex min-h-[27rem] flex-col gap-4 rounded-card border border-line bg-surface p-4 lg:p-5"
         >
@@ -115,9 +115,9 @@ export function LiveWidget({ deviceId, state, now, onRetry }: Props) {
                 <StatusBadge kind={state.kind} />
             </div>
 
-            <Body state={state} onRetry={onRetry} />
+            <Body key={state.kind} state={state} onRetry={onRetry} />
 
             <p className="border-t border-line-soft pt-3 text-[13px] text-muted tabular-nums">{footerText(state, now)}</p>
-        </section>
+        </article>
     );
 }
