@@ -13,3 +13,8 @@ desktop.ini
 !.vscode/settings.json
 !.vscode/extensions.json
 .idea/
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
