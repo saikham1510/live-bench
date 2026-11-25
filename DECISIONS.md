@@ -83,3 +83,14 @@
 - The widget body is keyed by state, so changing state never moves old elements (CLS 0 on /lab).
 - Widgets are named articles, not landmarks, so pages with several widgets don't repeat the same landmark.
 - /lab stays noindexx; its SEO score and the console error from the not-yet-existing API are expected.
+
+## Local broker and fake device (Stage C · C1, Nov 2026)
+- Mosquitto 2.1.2 runs in Docker Compose (`compose.yaml` at the repo root). Firmware and backend share this one broker. TimescaleDB joins the same file in later stages.
+- The image tag is pinned, so the broker doesn't change version under me.
+- The port is published on 127.0.0.1 only, so anonymous access is safe for now. Before the ESP32 connects: passwords and per-device ACLs as in the contract, then open the port to the hotspot network.
+- Retained messages live on a named Docker volume, so `devices/bench-01/status` survives a broker restart.
+- The fake device lives in `backend/tools/`: the backend gets tested without hardware this way, now and later. It follows the contract's MQTT section, and a pytest file checks that.
+- Status: `online` (retained) on every connect and reconnect; `offline` as the last will. On a clean exit the script publishes `offline` itself.
+- The script waits for the broker's CONNACK before publishing, so `online` always arrives before the first reading.
+- Keepalive 15 s on the fake device, so a frozen device shows as offline within about 25 s (1.5 x keepalive, plus the broker's check delay). The firmware's value is decided in B2.
+- QoS 1 on both topics. paho holds QoS 1 messages in memory while the broker is down and sends them, with their original timestamps, after it reconnects.
